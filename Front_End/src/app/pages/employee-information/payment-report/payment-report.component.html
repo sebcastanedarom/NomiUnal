@@ -1,0 +1,54 @@
+<h1 class="text-center mt-3 text-blue absolute-center"> Informes de pagos </h1>
+<div class="d-flex align-items-center absolute-center ">
+    <div class="col">
+        <div class="card mb-3 d-flex align-items-center bg-yellow " style="max-width: 100000px;">
+            <div class="row no-gutters ">
+
+                <div class="card-body">
+                    <h5 class="">
+                        A continuacion vera los informes de pago efectuados, estos estaran organizados del mas reciente al mas antiguo
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-danger" *ngIf="recibos.length == 0 ">
+    <h1>No se encontraron coincidencias</h1>
+</div>
+<div class="col " *ngFor="let receipt of recibos, let i = index">
+
+    <mdb-card>
+        <!--Card content-->
+        <mdb-card-body>
+
+            <!--Title-->
+            <mdb-card-title>
+                <h4>{{recibos[i].fecha}}</h4>
+            </mdb-card-title>
+
+            <!--Text-->
+            <mdb-card-text>
+                Nombre: {{nombre}}
+                <br> # de identificacion: {{idEmpleado}}
+                <br> # de factura: {{recibos[i].id_recibo}}
+                <br> Area: {{area}}
+                <br> Cargo: {{cargo}}
+                <br> Valor Pagado: {{recibos[i].valor_total}}
+            </mdb-card-text>
+
+
+        </mdb-card-body>
+    </mdb-card>
+    <br>
+
+
+
+
+</div>
+<button (click)="exit()" class=" btn btn-outline bg-yellow" type="button">
+  <em class="fas fa-arrow-left"></em>
+  Regresar
+  </button>

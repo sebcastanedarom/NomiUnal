@@ -1,0 +1,59 @@
+<h1 class="text-center mt-3 text-blue absolute-center"> Horas Extra </h1>
+<div class="d-flex align-items-center absolute-center ">
+    <div class="col">
+        <div class="card mb-3 d-flex align-items-center bg-yellow " style="max-width: 100000px;">
+            <div class="row no-gutters ">
+
+                <div class="card-body">
+                    <h5 class="">
+                        Para poder guardar las horas extra hechas por el empledo indique porfavor el dia y la cantidad de horas que fueron efectuadas
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col ">
+    <form class="mt-4 " autocomplete="off" [formGroup]="form" (ngSubmit)="save()">
+
+
+        <div class="form-group d-block">
+            <em class="far fa-calendar-alt fa-6x mb-3"></em>
+            <input bsDatepicker [bsConfig]="{ isAnimated: true }" [class.is-invalid]="DiaNoValido" formControlName="dia" type="datetime" class="form-control mb-3" placeholder="Dia de las horas extra">
+            <small *ngIf="DiaNoValido" class="text-danger mb-3">
+        campo requerido
+      </small>
+            <em class="fas fa-hourglass-half fa-6x mb-3"></em>
+            <select [class.is-invalid]="CantidadNoValido" formControlName="cantidad" type="number" class="form-control mb-3">
+              <option value="" hidden selected disabled>Cantidad de horas extra</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              </select>
+            <small *ngIf="CantidadNoValido" class="text-danger mb-3">
+    campo requerido
+  </small>
+        </div>
+
+        <div class="row d-block">
+            <button (click)="exit()" class=" btn btn-outline bg-yellow" type="button">
+            <em class="fas fa-arrow-left"></em>
+            Regresar
+            </button>
+            <button type="submit" class="btn bg-blue float-right">
+                <em class="far fa-save"></em>
+                Agregar
+          </button>
+        </div>
+
+
+    </form>
+
+
+
+
+</div>

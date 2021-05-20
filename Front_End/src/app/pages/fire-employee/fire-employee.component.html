@@ -1,0 +1,35 @@
+<h1 class="text-center mt-3 text-blue absolute-center"> Despido de Empleados</h1>
+<div class="d-flex align-items-center absolute-center ">
+    <div class="col text-center">
+        <div class="card mb-3 d-flex align-items-center bg-yellow " style="max-width: 100000px;">
+            <div class="row no-gutters ">
+
+                <div class="card-body">
+                    <h5 class="">
+                        Para poder despedir a un empleado busquelo digitando su numero de documento y haga click en el
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<form class=" text-center align-content-center mb-4">
+    <input class="form-control mt-2 mb-3 text-center align-content-center" type="search" placeholder="No Documento de Identidad" (keyup.enter)="searchEmployee(searchid.value)" #searchid>
+    <button (click)="searchEmployee(searchid.value)" class="btn bg-blue form-buttom text-center align-content-center" type="button">Buscar</button>
+</form>
+<div class="text-danger" *ngIf="employees.length == 0 ">
+    <h1>No se encontraron coincidencias</h1>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2">
+    <app-summary-employee-card (click)="navigatePerfil(employee.identificacion)" *ngFor="let employee of employees, let i = index" [index]="i" [employee]="employee"></app-summary-employee-card>
+</div>
+
+<form class=" text-center align-content-center">
+
+    <button (click)="exit()" class="btn  bg-yellow form-buttom mb-3" type="button">
+    <em class="fas fa-arrow-left"></em>
+    Regresar
+</button>
+</form>

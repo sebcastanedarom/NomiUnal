@@ -1,0 +1,71 @@
+<div class="card-body mt-3">
+    <app-summary-employee-card [employee]="employee"></app-summary-employee-card>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col">
+        <button (click)="navigatePaymentReport()" class="btn">
+        <em class="far fa-address-book fa-6x"></em>
+      </button>
+        <h4>
+            Informe Pagos
+        </h4>
+    </div>
+    <div class="col">
+        <button (click)="navigateExtraHours()" class="btn">
+        <em class="far fa-clock fa-6x"></em>
+      </button>
+        <h4>
+            Horas Extra
+        </h4>
+    </div>
+    <div class="w-100 mt-3"></div>
+    <div class="col">
+        <button (click)="navigateEditInformation()" class="btn">
+          <em class="fas fa-user-edit fa-6x"></em>
+      </button>
+        <h4>
+            Editar Informacion
+        </h4>
+    </div>
+    <div class="col">
+        <button (click)="navigatePayments()" class="btn">
+          <em class="fas fa-dollar-sign fa-6x"></em>
+      </button>
+        <h4>
+            Pagos
+        </h4>
+    </div>
+    <div class="w-100 mt-3"></div>
+    <div class="col">
+        <button (click)="navigateAbsences()" class="btn">
+        <em class="far fa-calendar-times fa-6x"></em>
+      </button>
+        <h4>
+            Reportar Inasistencias
+        </h4>
+    </div>
+    <div class="col">
+        <button (click)="navigateDiscounts()" class="btn">
+          <em class="fas fa-minus-circle fa-6x"></em>
+      </button>
+        <h4>
+            Descuentos
+        </h4>
+    </div>
+</div>
+
+<div class=" row ">
+    <div class="col"></div>
+    <div class="col">
+        <button (click)="exit()" class="btn bg-yellow align-center">
+      <em class="fas fa-arrow-left "></em>
+      Regresar
+    </button>
+    </div>
+    <div class="col"></div>
+
+</div>

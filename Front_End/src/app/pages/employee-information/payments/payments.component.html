@@ -1,0 +1,104 @@
+<h1 class="text-center mt-3 text-blue absolute-center"> Pago Empleado </h1>
+<div class="d-flex align-items-center absolute-center ">
+    <div class="col">
+        <div class="card mb-3 d-flex align-items-center bg-yellow " style="max-width: 100000px;">
+            <div class="row no-gutters ">
+
+                <div class="card-body">
+                    <h5 class="">
+                        Aquí encontrara el desprendible de la nomina
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-danger" *ngIf="recibos.length == 0 ">
+    <h1>No se encontraron coincidencias</h1>
+</div>
+<div>
+
+    <mdb-card>
+        <!--Card content-->
+        <mdb-card-body>
+            <mdb-card-title class="text-center">
+                <h4>Desprendible de Nomina</h4>
+            </mdb-card-title>
+            <div class="d-flex justify-content-end">
+                <mdb-card-text>
+                    Area: {{recibos[0].area}}
+                    <br> Cargo: {{recibos[0].cargo}}
+                </mdb-card-text>
+            </div>
+
+            <mdb-card-text>
+                Nombre: {{recibos[0].nombre_empleado}}
+                <br> # de Documento: {{recibos[0].id_documento}}
+                <br> Tiempo Trabajado: {{recibos[0].diasTrabajados}}
+                <br> Salario: {{recibos[0].salario}}
+                <br> Deducciones: {{recibos[0].deducciones}}
+                <br> Percepciones: {{recibos[0].percepciones}}
+            </mdb-card-text>
+
+            <mdb-card-title>
+                Seguridad Social Integral:
+            </mdb-card-title>
+            <mdb-card-text>
+                Valor ARL: {{recibos[0].ARL}}
+                <br> Valor EPS: {{recibos[0].EPS}}
+                <br> Valor AFP: {{recibos[0].AFP}}
+                <br> Valor Salario final: {{recibos[0].salariof}}
+                <br> Valor a consignar: {{recibos[0].salariof}} - {{recibos[0].deducciones}} + {{recibos[0].percepciones}}
+                <br> Banco: {{recibos[0].Banco}}
+                <br> Numero de Cuenta: {{recibos[0].numero_cuenta}}
+
+            </mdb-card-text>
+
+            <mdb-card-title class="text-center">
+                <h5></h5>
+            </mdb-card-title>
+            <br>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-sm">
+                        __________________
+                    </div>
+                    <div class="col-sm">
+                        __________________
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-sm">
+                        Firma Autorizada
+                    </div>
+                    <div class="col-sm">
+                        Firma Empleado
+                    </div>
+                </div>
+            </div>
+        </mdb-card-body>
+    </mdb-card>
+    <br>
+
+
+
+
+</div>
+<div>
+    <div class="row justify-content-center">
+        <button (click)="exit()" class=" btn btn-outline bg-yellow" type="button">
+      <em class="fas fa-arrow-left"></em>
+      Regresar
+      </button>
+        <button (click)="pagar()" class=" btn btn-outline bg-blue" type="button">
+        <em class="fas fa-money-bill"></em>
+        Pagar
+        </button>
+    </div>
+
+
+</div>

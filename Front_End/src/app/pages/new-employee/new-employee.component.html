@@ -1,0 +1,288 @@
+<h1 class="text-center mt-3 text-blue absolute-center"> Añadir un nuevo empleado</h1>
+<div class="d-flex align-items-center absolute-center ">
+    <div class="col">
+        <div class="card mb-3 d-flex align-items-center bg-yellow " style="max-width: 100000px;">
+            <div class="row no-gutters ">
+
+                <div class="card-body">
+                    <h5 class="">
+                        Para añadir un nuevo empleado a su nomina por favor complete la sigueinte informacion
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col ">
+    <form class="mt-4 " autocomplete="off" [formGroup]="form" (ngSubmit)="save()">
+        <div class="form-row">
+            <div class="col-md-6 md-form">
+                <input mdbInput id="nombres" [class.is-invalid]="NombresNoValido" formControlName="nombres" type="text" class="form-control" placeholder="Nombres Completos">
+                <label for="nombres" class="">Nombre Completo</label>
+                <small *ngIf="NombresNoValido" class="text-danger">
+              campo requerido
+            </small>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="apellidos" [class.is-invalid]="apellidosNoValido" formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos">
+                <label for="apellidos" class="">Apellidos</label>
+                <small *ngIf="apellidosNoValido" class="text-danger">
+            campo requerido
+          </small>
+            </div>
+        </div>
+
+        <div class="form-row align-items-start ">
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="tipoDocumentoNoValido" class="text-danger mt-2">
+                campo requerido
+              </small>
+
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="tipoDocumento" id="tipoDocumento" [class.is-invalid]="tipoDocumentoNoValido" [class.invalid]="tipoDocumentoNoValido" formControlName="tipoDocumento" type="text" class="form-control "
+                    [class.border-bottom-gray]="!tipoDocumentoNoValido">
+                  <option value="" hidden selected hidden>Tipo de Documento</option>
+                  <option>Cedula de Ciudadania</option>
+                  <option>Cedula de Extranjeria</option>
+                  <option>Pasaporte</option>
+                  </select>
+
+                <label for="tipoDocumento" class="small mb-0 text-muted ">Tipo De Documento</label>
+
+
+
+            </div>
+
+
+
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="numeroDocumento" [class.is-invalid]="numeroDocumentoNoValido" formControlName="numeroDocumento" type="text" class="form-control" placeholder="Numero De Documento">
+                <label for="numeroDocumnto" class="">Numero de Documento</label>
+                <small *ngIf="numeroDocumentoNoValido" class="text-danger">
+          campo requerido
+        </small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="celular" [class.is-invalid]="celularNoValido" formControlName="celular" type="text" class="form-control" placeholder="Celular">
+                <label for="celular" class="">Celular</label>
+                <small *ngIf="celularNoValido" class="text-danger">
+          campo requerido
+        </small>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="direccion" [class.is-invalid]="direccionNoValido" formControlName="direccion" type="text" class="form-control" placeholder="Direccion">
+                <label for="direccion" class="">Direccion</label>
+                <small *ngIf="direccionNoValido" class="text-danger">
+        campo requerido
+      </small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="fecha" bsDatepicker [bsConfig]="{ isAnimated: true }" [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" [class.is-invalid]="fechaNacimientoNoValido" formControlName="fechaNacimiento" type="text" class="form-control" placeholder="Fecha de Nacimiento">
+                <label for="fecha" class="">Fecha de Nacimiento</label>
+                <small *ngIf="fechaNacimientoNoValido" class="text-danger">
+        campo requerido
+      </small>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="imagen" [class.is-invalid]="imagenNoValido" formControlName="imagen" type="text" class="form-control" placeholder="Añada una imagen">
+                <label for="imagen" class="">Imagen</label>
+                <small *ngIf="imagenNoValido" class="text-danger">
+      campo requerido
+    </small>
+            </div>
+        </div>
+
+        <div class="form-row align-items-start ">
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="fechaI" bsDatepicker [bsConfig]="{ isAnimated: true }" [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" [class.is-invalid]="fechaIngresoNoValido" formControlName="fechaIngreso" type="text" class="form-control" placeholder="Fecha de Ingreso">
+                <label for="fechaI" class="">Fecha de Ingreso</label>
+                <small *ngIf="fechaIngresoNoValido" class="text-danger">
+      campo requerido
+    </small>
+            </div>
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="tipoCuentaNoValido" class="text-danger mt-2">
+                campo requerido
+              </small>
+
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="tipoCuenta" id="tipoCuenta" [class.is-invalid]="tipoCuentaNoValido" [class.invalid]="tipoCuentaNoValido" formControlName="tipoCuenta" type="text" class="form-control " [class.border-bottom-gray]="!tipoCuentaNoValido">
+                  <option value="" hidden selected hidden>Tipo de cuenta</option>
+                  <option>Ahorros</option>
+                  <option>Corriente</option>
+                  <option>Nomina</option>
+                  </select>
+
+                <label for="tipoCuenta" class="small mb-0 text-muted ">Tipo De cuenta</label>
+
+
+
+            </div>
+        </div>
+
+        <div class="form-row align-items-start">
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="bancoNoValido" class="text-danger mt-2">
+                campo requerido
+              </small>
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="banco" id="banco" [class.invalid]="bancoNoValido" [class.border-bottom-gray]="!bancoNoValido" [class.is-invalid]="bancoNoValido" formControlName="banco" type="text" class="form-control border-bottom">
+                  <option value="" hidden selected disabled>Banco</option>
+                  <option *ngFor="let banco of bancos" value="{{banco.id_banco}}"> {{banco.nombre_banco}}  </option>
+
+                  </select>
+                <label for="banco" class="small mb-0 text-muted">Banco</label>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="cuenta" [class.is-invalid]="numeroCuentaNoValido" formControlName="numeroCuenta" type="text" class="form-control" placeholder="Numero de Cuenta">
+                <label for="cuenta" class="">Numero de Cuenta</label>
+                <small *ngIf="numeroCuentaNoValido" class="text-danger">
+                campo requerido
+                </small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="arl" [class.is-invalid]="arlNoValido" formControlName="arl" type="text" class="form-control" placeholder="ARL">
+                <label for="arl" class="">ARL</label>
+                <small *ngIf="arlNoValido" class="text-danger">
+        campo requerido
+      </small>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="carl" [class.is-invalid]="certificadoArlNoValido" formControlName="certificadoArl" type="text" class="form-control" placeholder="Subir Certificado ARL">
+                <label for="carl" class="">Certificado ARL</label>
+                <small *ngIf="certificadoArlNoValido" class="text-danger">
+      campo requerido
+    </small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="eps" [class.is-invalid]="epsNoValido" formControlName="eps" type="text" class="form-control" placeholder="EPS">
+                <label for="eps" class="">EPS</label>
+                <small *ngIf="epsNoValido" class="text-danger">
+        campo requerido
+      </small>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="ceps" [class.is-invalid]="certificadoEpsNoValido" formControlName="certificadoEps" type="text" class="form-control" placeholder="Subir Certificado EPS">
+                <label for="ceps" class="">Certificado EPS</label>
+                <small *ngIf="certificadoEpsNoValido" class="text-danger">
+      campo requerido
+    </small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="afp" [class.is-invalid]="afpNoValido" formControlName="afp" type="text" class="form-control" placeholder="AFP">
+                <label for="afp" class="">AFP</label>
+                <small *ngIf="afpNoValido" class="text-danger">
+        campo requerido
+      </small>
+            </div>
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="cafp" [class.is-invalid]="certificadoAfpNoValido" formControlName="certificadoAfp" type="text" class="form-control" placeholder="Subir Certificado AFP">
+                <label for="cafp" class="">Certificado AFP</label>
+                <small *ngIf="certificadoAfpNoValido" class="text-danger">
+      campo requerido
+    </small>
+            </div>
+        </div>
+
+        <div class="form-row align-items-start">
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="areaNoValido" class="text-danger mt-2">
+                  campo requerido
+                </small>
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="area" id="area" [class.invalid]="areaNoValido" [class.border-bottom-gray]="!areaNoValido" [class.is-invalid]="areaNoValido" formControlName="area" type="text" class="form-control border-bottom">
+                  <option value="" hidden selected disabled>Area</option>
+                  <option *ngFor="let area of areas" value="{{area.id_area}}"> {{area.nombre_area}}  </option>
+                  </select>
+                <label for="area" class="small mb-0 text-muted">Area</label>
+            </div>
+
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="cargoNoValido" class="text-danger mt-2">
+                  campo requerido
+                </small>
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="cargo" id="cargo" [class.invalid]="cargoNoValido" [class.border-bottom-gray]="!cargoNoValido" [class.is-invalid]="cargoNoValido" formControlName="cargo" type="text" class="form-control border-bottom">
+                  <option value="" hidden selected disabled>cargo</option>
+                  <option *ngFor="let cargo of cargos" value="{{cargo.id_cargo}}"> {{cargo.nombre_cargo}}  </option>
+                  </select>
+                <label for="cargo" class="small mb-0 text-muted">Cargo</label>
+            </div>
+        </div>
+
+        <div class="form-row align-items-start">
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="rolNoValido" class="text-danger mt-2">
+                  campo requerido
+                </small>
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="rol" id="rol" [class.invalid]="rolNoValido" [class.border-bottom-gray]="!rolNoValido" [class.is-invalid]="rolNoValido" formControlName="rol" type="text" class="form-control border-bottom">
+                  <option value="" hidden selected disabled>rol</option>
+                  <option *ngFor="let rol of roles" value="{{rol.id_rol}}"> {{rol.tipo_rol}}  </option>
+                  </select>
+                <label for="rol" class="small mb-0 text-muted">Rol</label>
+            </div>
+
+            <div class="form-group col-md-6 md-form">
+                <input mdbInput id="contrato" [class.is-invalid]="contratoNoValido" formControlName="contrato" type="text" class="form-control" placeholder="contrato">
+                <label for="Contrato" class="">Contrato</label>
+                <small *ngIf="contratoNoValido" class="text-danger">
+    campo requerido
+  </small>
+            </div>
+        </div>
+
+
+
+        <div class="form-row align-items-start">
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="horarioNoValido" class="text-danger mt-2">
+                  campo requerido
+                </small>
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="horario" id="horaio" [class.invalid]="horarioNoValido" [class.border-bottom-gray]="!horarioNoValido" [class.is-invalid]="horarioNoValido" formControlName="horario" type="text"
+                    class="form-control border-bottom">
+                  <option value="" hidden selected disabled>Horario de Trabajo</option>
+                  <option *ngFor="let thorario of horarios" value="{{thorario.id_horario}}"> {{thorario.tipo_horario}}  </option>
+                  </select>
+                <label for="horario" class="small mb-0 text-muted">Horario de Trabajo</label>
+            </div>
+            <div class="form-group col-md-6 blue-focus d-flex flex-column-reverse mt-2">
+                <small *ngIf="tipoContratoNoValido" class="text-danger mt-2">
+                campo requerido
+              </small>
+                <select style="border: none; padding-left: 0; border-radius: 0 !important;" name="tcontrato" id="tcontrato" [class.invalid]="tipoContratoNoValido" [class.border-bottom-gray]="!tipoContratoNoValido" [class.is-invalid]="tipoContratoNoValido" formControlName="tipoContrato"
+                    type="text" class="form-control border-bottom">
+                  <option value="" hidden selected disabled>Tipo de Contrato</option>
+                  <option *ngFor="let ticontrato of contratos" value="{{ticontrato.id_tipo}}"> {{ticontrato.descripcion}}  </option>
+                  </select>
+                <label for="tcontrato" class="small mb-0 text-muted">Tipo de Contrato</label>
+            </div>
+        </div>
+        <div class="row d-block mt-5 mb-2">
+            <button (click)="exit()" class=" btn btn-outline bg-yellow" type="button">
+            <em class="fas fa-arrow-left"></em>
+            Regresar
+            </button>
+            <button type="submit" class="btn bg-blue float-right">
+                <em class="far fa-save"></em>
+                Guardar
+          </button>
+        </div>
+
+
+    </form>
+
+
+
+
+</div>

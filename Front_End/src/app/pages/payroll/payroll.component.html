@@ -1,0 +1,59 @@
+<h1 class="text-center mt-3 text-blue absolute-center"> Estado de la nomina </h1>
+<div class="d-flex align-items-center absolute-center ">
+    <div class="col">
+        <div class="card mb-3 d-flex align-items-center bg-yellow " style="max-width: 100000px;">
+            <div class="row no-gutters ">
+
+                <div class="card-body">
+                    <h5 class="">
+                        A continuacion vera los informes de los ultimos pagos efectuados a cada empleado segun el tipo y las condiciones del contrato.
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-danger" *ngIf="recibos.length == 0 ">
+  <h1>No se encontraron coincidencias</h1>
+</div>
+<div class="col " *ngFor="let receipt of recibos, let i = index">
+
+  <mdb-card >
+    <!--Card content-->
+    <mdb-card-body>
+
+      <!--Title-->
+      <mdb-card-title>
+        <h4>{{recibos[i].fecha}} - {{recibos[i].nombre_empleado}}</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text>
+        Nombre: {{recibos[i].nombre_empleado}}
+        <br>
+        # de identificacion: {{recibos[i].id_documento}}
+        <br>
+        # de factura: {{recibos[i].id_recibo}}
+        <br>
+        Area: {{recibos[i].area}}
+        <br>
+        Cargo: {{recibos[i].cargo}}
+        <br>
+        Valor Pagado: {{recibos[i].valor}}
+      </mdb-card-text>
+
+
+    </mdb-card-body>
+  </mdb-card>
+<br>
+
+
+
+
+</div>
+<button (click)="exit()" class=" btn btn-outline bg-yellow" type="button">
+  <em class="fas fa-arrow-left"></em>
+  Regresar
+  </button>

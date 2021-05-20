@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col">
+        <div class="card-body mt-3">
+            <app-summary-employee-card [employee]="employee"></app-summary-employee-card>
+        </div>
+        <div class="d-block">
+            <div class=" row ">
+                <div class="col"></div>
+                <div class="col">
+                    <button (click)="save()" class="btn ">
+                      <em class="fas fa-dollar-sign fa-9x"></em>
+                      <h5>
+                          Ejecutar Liquidacion y terminacion del contrato
+                      </h5>
+                  </button>
+                </div>
+                <div class="col"></div>
+
+            </div>
+
+            <div class=" row mt-5">
+
+                <div class="col">
+                    <button (click)="exit()" class="btn bg-yellow">
+                      <em class="fas fa-arrow-left"></em>
+                      Regresar
+                    </button>
+                </div>
+            </div>
+        </div>

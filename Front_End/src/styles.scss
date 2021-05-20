@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+
+.invalid {
+    border-bottom: 1px solid #f50909 !important;
+}
+
+.form-login {
+    width: 600px;
+}
+
+.form-buttom {
+    width: 300px;
+    resize: horizontal;
+}
+
+.form-group:focus {
+    background-color: #4285f4 !important;
+}
+
+.blue-focus {
+    select.form-control:focus~label {
+        color: #4285f4 !important;
+    }
+}
+
+select.form-control:focus {
+    box-shadow: none !important;
+}
+
+.form-control.is-invalid {
+    background-position: right 20px center;
+}
+
+.border-bottom-gray {
+    border-bottom: 1px solid #cfcdcd !important;
+}
+
+.abs-center-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+}
+
+.abs-center-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.text-blue {
+    color: rgb(0, 162, 255);
+}
+
+.bg-yellow {
+    background-color: rgb(241, 218, 112);
+}
+
+.bg-blue {
+    background-color: rgba(8, 52, 245, 0.664);
+}
+
+.fa-user-plus {
+    color: rgb(255, 208, 0);
+}
+
+.fa-receipt {
+    color: rgb(0, 162, 255);
+}
+
+.fa-user-times {
+    color: rgb(255, 208, 0);
+}
+
+.fa-address-book {
+    color: rgb(0, 162, 255);
+}
+
+.fa-minus-circle {
+    color: rgb(0, 162, 255);
+}
+
+.fa-calendar-times {
+    color: rgb(0, 162, 255);
+}
+
+.fa-dollar-sign {
+    color: rgb(0, 162, 255);
+}
+
+.fa-user-edit {
+    color: rgb(0, 162, 255);
+}
+
+.fa-clock {
+    color: rgb(0, 162, 255);
+}
+
+.main-container {
+    margin-top: 40px;
+}
+
+.puntero {
+    cursor: pointer;
+}
+
+.img-circle {
+    border-radius: 100%;
+    width: 150px;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.btn-outline-success {
+    margin-left: 5px;
+}
+
+.img-thumb {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}

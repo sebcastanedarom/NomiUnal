@@ -1,0 +1,9 @@
+/*estilos propios*/
+
+.aactivo {
+    color: rgb(0, 162, 255);
+}
+
+.noActivo {
+    color: rgb(255, 208, 0);
+}

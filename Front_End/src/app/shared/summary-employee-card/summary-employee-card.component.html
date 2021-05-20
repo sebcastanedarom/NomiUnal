@@ -1,0 +1,18 @@
+<div class="col mb-4">
+    <div class="row no-gutters " style="max-width: 500px">
+        <div *ngIf="employee.foto == 'imagen'; else Imangen" class="col-md-5 puntero">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/No_imagen_disponible.gif" type="button" class="card-img-top" alt="">
+        </div>
+        <ng-template #Imangen>
+            <img #elseBlock [src]="employee.foto" type="button" class="card-img-top  puntero" alt="">
+        </ng-template>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h4 class="card-text text-capitalize text-center">{{employee.nombre}} {{employee.apellido}} </h4>
+                <h4 class="card-text text-capitalize text-center">No de Documento: {{employee.identificacion}}</h4>
+                <p class="card-text text-capitalize"> Area : {{employee.area}}</p>
+                <p class="card-text text-capitalize"> Cargo: {{employee.cargo}} </p>
+            </div>
+        </div>
+    </div>
+</div>
